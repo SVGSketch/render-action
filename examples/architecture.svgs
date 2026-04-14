@@ -1,0 +1,629 @@
+{
+  "schemaVersion": 1,
+  "documentMetadata": {
+    "title": "System Architecture",
+    "description": "A three-tier system diagram showing client, API, and data layers connected by request arrows. Lives in git, re-rendered on every merge.",
+    "language": "en"
+  },
+  "templateVariables": [
+    {
+      "name": "title",
+      "type": "string",
+      "defaultValue": "System Architecture",
+      "label": "Diagram title"
+    },
+    {
+      "name": "clientColor",
+      "type": "color",
+      "defaultValue": "#4299e1",
+      "label": "Client tier color"
+    },
+    {
+      "name": "apiColor",
+      "type": "color",
+      "defaultValue": "#38b2ac",
+      "label": "API tier color"
+    },
+    {
+      "name": "dataColor",
+      "type": "color",
+      "defaultValue": "#ed8936",
+      "label": "Data tier color"
+    }
+  ],
+  "viewboxes": [
+    {
+      "id": "vb-1",
+      "x": 0,
+      "y": 0,
+      "width": 840,
+      "height": 520
+    }
+  ],
+  "shapes": [
+    {
+      "id": "bg",
+      "type": "rectangle",
+      "state": {
+        "x": 0,
+        "y": 0,
+        "width": 840,
+        "height": 520,
+        "fillColor": "#f7fafc",
+        "borderColor": "#f7fafc",
+        "borderWidth": 0,
+        "opacity": 1
+      }
+    },
+
+    {
+      "id": "title",
+      "type": "text",
+      "state": {
+        "x": 420,
+        "y": 48,
+        "text": "{{title}}",
+        "textAnchor": "middle",
+        "fillColor": "#1a202c",
+        "fontFamily": "Arial",
+        "fontSize": 22,
+        "fontWeight": "700",
+        "opacity": 1
+      }
+    },
+
+    {
+      "id": "tier-label-client",
+      "type": "text",
+      "state": {
+        "x": 140,
+        "y": 96,
+        "text": "CLIENT",
+        "textAnchor": "middle",
+        "fillColor": "#718096",
+        "fontFamily": "Arial",
+        "fontSize": 11,
+        "fontWeight": "700",
+        "letterSpacing": 2,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "tier-label-api",
+      "type": "text",
+      "state": {
+        "x": 420,
+        "y": 96,
+        "text": "API",
+        "textAnchor": "middle",
+        "fillColor": "#718096",
+        "fontFamily": "Arial",
+        "fontSize": 11,
+        "fontWeight": "700",
+        "letterSpacing": 2,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "tier-label-data",
+      "type": "text",
+      "state": {
+        "x": 700,
+        "y": 96,
+        "text": "DATA",
+        "textAnchor": "middle",
+        "fillColor": "#718096",
+        "fontFamily": "Arial",
+        "fontSize": 11,
+        "fontWeight": "700",
+        "letterSpacing": 2,
+        "opacity": 1
+      }
+    },
+
+    {
+      "id": "box-web",
+      "type": "rectangle",
+      "state": {
+        "x": 60,
+        "y": 120,
+        "width": 160,
+        "height": 70,
+        "cornerRadius": 8,
+        "fillColor": "#ffffff",
+        "borderColor": "{{clientColor}}",
+        "borderWidth": 2,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "box-web-title",
+      "type": "text",
+      "state": {
+        "x": 140,
+        "y": 150,
+        "text": "Web App",
+        "textAnchor": "middle",
+        "fillColor": "#1a202c",
+        "fontFamily": "Arial",
+        "fontSize": 15,
+        "fontWeight": "700",
+        "opacity": 1
+      }
+    },
+    {
+      "id": "box-web-sub",
+      "type": "text",
+      "state": {
+        "x": 140,
+        "y": 170,
+        "text": "React / Vue / plain TS",
+        "textAnchor": "middle",
+        "fillColor": "#718096",
+        "fontFamily": "Arial",
+        "fontSize": 11,
+        "opacity": 1
+      }
+    },
+
+    {
+      "id": "box-mobile",
+      "type": "rectangle",
+      "state": {
+        "x": 60,
+        "y": 220,
+        "width": 160,
+        "height": 70,
+        "cornerRadius": 8,
+        "fillColor": "#ffffff",
+        "borderColor": "{{clientColor}}",
+        "borderWidth": 2,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "box-mobile-title",
+      "type": "text",
+      "state": {
+        "x": 140,
+        "y": 250,
+        "text": "Mobile",
+        "textAnchor": "middle",
+        "fillColor": "#1a202c",
+        "fontFamily": "Arial",
+        "fontSize": 15,
+        "fontWeight": "700",
+        "opacity": 1
+      }
+    },
+    {
+      "id": "box-mobile-sub",
+      "type": "text",
+      "state": {
+        "x": 140,
+        "y": 270,
+        "text": "iOS / Android",
+        "textAnchor": "middle",
+        "fillColor": "#718096",
+        "fontFamily": "Arial",
+        "fontSize": 11,
+        "opacity": 1
+      }
+    },
+
+    {
+      "id": "box-cli",
+      "type": "rectangle",
+      "state": {
+        "x": 60,
+        "y": 320,
+        "width": 160,
+        "height": 70,
+        "cornerRadius": 8,
+        "fillColor": "#ffffff",
+        "borderColor": "{{clientColor}}",
+        "borderWidth": 2,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "box-cli-title",
+      "type": "text",
+      "state": {
+        "x": 140,
+        "y": 350,
+        "text": "CLI",
+        "textAnchor": "middle",
+        "fillColor": "#1a202c",
+        "fontFamily": "Arial",
+        "fontSize": 15,
+        "fontWeight": "700",
+        "opacity": 1
+      }
+    },
+    {
+      "id": "box-cli-sub",
+      "type": "text",
+      "state": {
+        "x": 140,
+        "y": 370,
+        "text": "automation / scripting",
+        "textAnchor": "middle",
+        "fillColor": "#718096",
+        "fontFamily": "Arial",
+        "fontSize": 11,
+        "opacity": 1
+      }
+    },
+
+    {
+      "id": "box-gateway",
+      "type": "rectangle",
+      "state": {
+        "x": 340,
+        "y": 170,
+        "width": 160,
+        "height": 70,
+        "cornerRadius": 8,
+        "fillColor": "#ffffff",
+        "borderColor": "{{apiColor}}",
+        "borderWidth": 2,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "box-gateway-title",
+      "type": "text",
+      "state": {
+        "x": 420,
+        "y": 200,
+        "text": "API Gateway",
+        "textAnchor": "middle",
+        "fillColor": "#1a202c",
+        "fontFamily": "Arial",
+        "fontSize": 15,
+        "fontWeight": "700",
+        "opacity": 1
+      }
+    },
+    {
+      "id": "box-gateway-sub",
+      "type": "text",
+      "state": {
+        "x": 420,
+        "y": 220,
+        "text": "auth / rate limit / route",
+        "textAnchor": "middle",
+        "fillColor": "#718096",
+        "fontFamily": "Arial",
+        "fontSize": 11,
+        "opacity": 1
+      }
+    },
+
+    {
+      "id": "box-worker",
+      "type": "rectangle",
+      "state": {
+        "x": 340,
+        "y": 270,
+        "width": 160,
+        "height": 70,
+        "cornerRadius": 8,
+        "fillColor": "#ffffff",
+        "borderColor": "{{apiColor}}",
+        "borderWidth": 2,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "box-worker-title",
+      "type": "text",
+      "state": {
+        "x": 420,
+        "y": 300,
+        "text": "Worker",
+        "textAnchor": "middle",
+        "fillColor": "#1a202c",
+        "fontFamily": "Arial",
+        "fontSize": 15,
+        "fontWeight": "700",
+        "opacity": 1
+      }
+    },
+    {
+      "id": "box-worker-sub",
+      "type": "text",
+      "state": {
+        "x": 420,
+        "y": 320,
+        "text": "business logic",
+        "textAnchor": "middle",
+        "fillColor": "#718096",
+        "fontFamily": "Arial",
+        "fontSize": 11,
+        "opacity": 1
+      }
+    },
+
+    {
+      "id": "box-db",
+      "type": "rectangle",
+      "state": {
+        "x": 620,
+        "y": 170,
+        "width": 160,
+        "height": 70,
+        "cornerRadius": 8,
+        "fillColor": "#ffffff",
+        "borderColor": "{{dataColor}}",
+        "borderWidth": 2,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "box-db-title",
+      "type": "text",
+      "state": {
+        "x": 700,
+        "y": 200,
+        "text": "Database",
+        "textAnchor": "middle",
+        "fillColor": "#1a202c",
+        "fontFamily": "Arial",
+        "fontSize": 15,
+        "fontWeight": "700",
+        "opacity": 1
+      }
+    },
+    {
+      "id": "box-db-sub",
+      "type": "text",
+      "state": {
+        "x": 700,
+        "y": 220,
+        "text": "SQL / durable storage",
+        "textAnchor": "middle",
+        "fillColor": "#718096",
+        "fontFamily": "Arial",
+        "fontSize": 11,
+        "opacity": 1
+      }
+    },
+
+    {
+      "id": "box-cache",
+      "type": "rectangle",
+      "state": {
+        "x": 620,
+        "y": 270,
+        "width": 160,
+        "height": 70,
+        "cornerRadius": 8,
+        "fillColor": "#ffffff",
+        "borderColor": "{{dataColor}}",
+        "borderWidth": 2,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "box-cache-title",
+      "type": "text",
+      "state": {
+        "x": 700,
+        "y": 300,
+        "text": "Cache",
+        "textAnchor": "middle",
+        "fillColor": "#1a202c",
+        "fontFamily": "Arial",
+        "fontSize": 15,
+        "fontWeight": "700",
+        "opacity": 1
+      }
+    },
+    {
+      "id": "box-cache-sub",
+      "type": "text",
+      "state": {
+        "x": 700,
+        "y": 320,
+        "text": "Redis / KV",
+        "textAnchor": "middle",
+        "fillColor": "#718096",
+        "fontFamily": "Arial",
+        "fontSize": 11,
+        "opacity": 1
+      }
+    },
+
+    {
+      "id": "arrow-web-gw",
+      "type": "line",
+      "state": {
+        "x1": 220,
+        "y1": 155,
+        "x2": 340,
+        "y2": 195,
+        "borderColor": "#a0aec0",
+        "borderWidth": 2,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "arrow-mobile-gw",
+      "type": "line",
+      "state": {
+        "x1": 220,
+        "y1": 255,
+        "x2": 340,
+        "y2": 210,
+        "borderColor": "#a0aec0",
+        "borderWidth": 2,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "arrow-cli-gw",
+      "type": "line",
+      "state": {
+        "x1": 220,
+        "y1": 355,
+        "x2": 340,
+        "y2": 225,
+        "borderColor": "#a0aec0",
+        "borderWidth": 2,
+        "opacity": 1
+      }
+    },
+
+    {
+      "id": "arrow-gw-worker",
+      "type": "line",
+      "state": {
+        "x1": 420,
+        "y1": 240,
+        "x2": 420,
+        "y2": 270,
+        "borderColor": "#a0aec0",
+        "borderWidth": 2,
+        "opacity": 1
+      }
+    },
+
+    {
+      "id": "arrow-worker-db",
+      "type": "line",
+      "state": {
+        "x1": 500,
+        "y1": 295,
+        "x2": 620,
+        "y2": 205,
+        "borderColor": "#a0aec0",
+        "borderWidth": 2,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "arrow-worker-cache",
+      "type": "line",
+      "state": {
+        "x1": 500,
+        "y1": 305,
+        "x2": 620,
+        "y2": 305,
+        "borderColor": "#a0aec0",
+        "borderWidth": 2,
+        "opacity": 1
+      }
+    },
+
+    {
+      "id": "legend-box",
+      "type": "rectangle",
+      "state": {
+        "x": 60,
+        "y": 440,
+        "width": 720,
+        "height": 50,
+        "cornerRadius": 6,
+        "fillColor": "#ffffff",
+        "borderColor": "#e2e8f0",
+        "borderWidth": 1,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "legend-client-dot",
+      "type": "circle",
+      "state": {
+        "x": 92,
+        "y": 465,
+        "radius": 6,
+        "fillColor": "{{clientColor}}",
+        "borderColor": "{{clientColor}}",
+        "borderWidth": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "legend-client-text",
+      "type": "text",
+      "state": {
+        "x": 108,
+        "y": 469,
+        "text": "Client tier",
+        "fillColor": "#2d3748",
+        "fontFamily": "Arial",
+        "fontSize": 12,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "legend-api-dot",
+      "type": "circle",
+      "state": {
+        "x": 240,
+        "y": 465,
+        "radius": 6,
+        "fillColor": "{{apiColor}}",
+        "borderColor": "{{apiColor}}",
+        "borderWidth": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "legend-api-text",
+      "type": "text",
+      "state": {
+        "x": 256,
+        "y": 469,
+        "text": "API tier",
+        "fillColor": "#2d3748",
+        "fontFamily": "Arial",
+        "fontSize": 12,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "legend-data-dot",
+      "type": "circle",
+      "state": {
+        "x": 380,
+        "y": 465,
+        "radius": 6,
+        "fillColor": "{{dataColor}}",
+        "borderColor": "{{dataColor}}",
+        "borderWidth": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "legend-data-text",
+      "type": "text",
+      "state": {
+        "x": 396,
+        "y": 469,
+        "text": "Data tier",
+        "fillColor": "#2d3748",
+        "fontFamily": "Arial",
+        "fontSize": 12,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "legend-footer",
+      "type": "text",
+      "state": {
+        "x": 748,
+        "y": 469,
+        "text": "Rendered in CI",
+        "textAnchor": "end",
+        "fillColor": "#a0aec0",
+        "fontFamily": "Arial",
+        "fontSize": 11,
+        "fontStyle": "italic",
+        "opacity": 1
+      }
+    }
+  ]
+}

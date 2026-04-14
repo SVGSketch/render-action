@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  # Dogfood the action: render every .svgs file in examples/ using the
+  # action's own source, then upload the rendered SVGs as an artifact so
+  # reviewers can inspect each run's output.
+  render-examples:
+    name: Render examples
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Render default variants
+        id: default
+        uses: ./
+        with:
+          input: examples/**/*.svgs
+          output-dir: rendered/default
+
+      - name: Render retheme variants (template variable override)
+        id: themed
+        uses: ./
+        with:
+          input: examples/**/*.svgs
+          output-dir: rendered/retheme
+          variables: |
+            accent=#e74c3c
+            title=Q1 Revenue
+            barColorStart=#2ecc71
+            barColorEnd=#0d6631
+            clientColor=#8b5cf6
+            apiColor=#ec4899
+            dataColor=#f59e0b
+
+      - name: Summary
+        run: |
+          echo "## Rendered Examples" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Default variants: **${{ steps.default.outputs.count }}** file(s)" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Retheme variants: **${{ steps.themed.outputs.count }}** file(s)" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "Download the \`rendered-examples\` artifact to preview each SVG." >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload rendered examples
+        uses: actions/upload-artifact@v4
+        with:
+          name: rendered-examples
+          path: rendered/
+          retention-days: 30

@@ -1,0 +1,522 @@
+{
+  "schemaVersion": 1,
+  "documentMetadata": {
+    "title": "Monthly Active Users",
+    "description": "A themed bar chart showing H1 growth. Override {{title}}, {{subtitle}}, {{barColorStart}} and {{barColorEnd}} at render time to produce a themed variant without touching the source.",
+    "language": "en"
+  },
+  "templateVariables": [
+    {
+      "name": "title",
+      "type": "string",
+      "defaultValue": "Monthly Active Users",
+      "label": "Chart title"
+    },
+    {
+      "name": "subtitle",
+      "type": "string",
+      "defaultValue": "H1 2026  •  thousands",
+      "label": "Chart subtitle"
+    },
+    {
+      "name": "barColorStart",
+      "type": "color",
+      "defaultValue": "#3498db",
+      "label": "Bar gradient — top color"
+    },
+    {
+      "name": "barColorEnd",
+      "type": "color",
+      "defaultValue": "#1a5490",
+      "label": "Bar gradient — bottom color"
+    }
+  ],
+  "viewboxes": [
+    {
+      "id": "vb-1",
+      "x": 0,
+      "y": 0,
+      "width": 720,
+      "height": 460
+    }
+  ],
+  "shapes": [
+    {
+      "id": "bg",
+      "type": "rectangle",
+      "state": {
+        "x": 0,
+        "y": 0,
+        "width": 720,
+        "height": 460,
+        "fillColor": "#fafbfc",
+        "borderColor": "#fafbfc",
+        "borderWidth": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "title",
+      "type": "text",
+      "state": {
+        "x": 60,
+        "y": 52,
+        "text": "{{title}}",
+        "fillColor": "#1a202c",
+        "fontFamily": "Arial",
+        "fontSize": 22,
+        "fontWeight": "700",
+        "opacity": 1
+      }
+    },
+    {
+      "id": "subtitle",
+      "type": "text",
+      "state": {
+        "x": 60,
+        "y": 74,
+        "text": "{{subtitle}}",
+        "fillColor": "#718096",
+        "fontFamily": "Arial",
+        "fontSize": 13,
+        "opacity": 1
+      }
+    },
+
+    {
+      "id": "grid-line-1",
+      "type": "line",
+      "state": {
+        "x1": 80,
+        "y1": 140,
+        "x2": 680,
+        "y2": 140,
+        "borderColor": "#edf2f7",
+        "borderWidth": 1,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "grid-line-2",
+      "type": "line",
+      "state": {
+        "x1": 80,
+        "y1": 200,
+        "x2": 680,
+        "y2": 200,
+        "borderColor": "#edf2f7",
+        "borderWidth": 1,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "grid-line-3",
+      "type": "line",
+      "state": {
+        "x1": 80,
+        "y1": 260,
+        "x2": 680,
+        "y2": 260,
+        "borderColor": "#edf2f7",
+        "borderWidth": 1,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "grid-line-4",
+      "type": "line",
+      "state": {
+        "x1": 80,
+        "y1": 320,
+        "x2": 680,
+        "y2": 320,
+        "borderColor": "#edf2f7",
+        "borderWidth": 1,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "grid-line-5",
+      "type": "line",
+      "state": {
+        "x1": 80,
+        "y1": 380,
+        "x2": 680,
+        "y2": 380,
+        "borderColor": "#cbd5e0",
+        "borderWidth": 1,
+        "opacity": 1
+      }
+    },
+
+    {
+      "id": "y-label-80",
+      "type": "text",
+      "state": {
+        "x": 68,
+        "y": 144,
+        "text": "80",
+        "textAnchor": "end",
+        "fillColor": "#a0aec0",
+        "fontFamily": "Arial",
+        "fontSize": 11,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "y-label-60",
+      "type": "text",
+      "state": {
+        "x": 68,
+        "y": 204,
+        "text": "60",
+        "textAnchor": "end",
+        "fillColor": "#a0aec0",
+        "fontFamily": "Arial",
+        "fontSize": 11,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "y-label-40",
+      "type": "text",
+      "state": {
+        "x": 68,
+        "y": 264,
+        "text": "40",
+        "textAnchor": "end",
+        "fillColor": "#a0aec0",
+        "fontFamily": "Arial",
+        "fontSize": 11,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "y-label-20",
+      "type": "text",
+      "state": {
+        "x": 68,
+        "y": 324,
+        "text": "20",
+        "textAnchor": "end",
+        "fillColor": "#a0aec0",
+        "fontFamily": "Arial",
+        "fontSize": 11,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "y-label-0",
+      "type": "text",
+      "state": {
+        "x": 68,
+        "y": 384,
+        "text": "0",
+        "textAnchor": "end",
+        "fillColor": "#a0aec0",
+        "fontFamily": "Arial",
+        "fontSize": 11,
+        "opacity": 1
+      }
+    },
+
+    {
+      "id": "bar-jan",
+      "type": "rectangle",
+      "state": {
+        "x": 110,
+        "y": 314,
+        "width": 70,
+        "height": 66,
+        "cornerRadius": 4,
+        "fillType": "linear-gradient",
+        "fillGradient": {
+          "opacity": 1,
+          "spreadMethod": "pad",
+          "x1": 0,
+          "y1": 0,
+          "x2": 0,
+          "y2": 1,
+          "stops": [
+            { "color": "{{barColorStart}}", "offset": 0, "opacity": 1 },
+            { "color": "{{barColorEnd}}", "offset": 1, "opacity": 1 }
+          ]
+        },
+        "borderColor": "transparent",
+        "borderWidth": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "bar-feb",
+      "type": "rectangle",
+      "state": {
+        "x": 220,
+        "y": 278,
+        "width": 70,
+        "height": 102,
+        "cornerRadius": 4,
+        "fillType": "linear-gradient",
+        "fillGradient": {
+          "opacity": 1,
+          "spreadMethod": "pad",
+          "x1": 0,
+          "y1": 0,
+          "x2": 0,
+          "y2": 1,
+          "stops": [
+            { "color": "{{barColorStart}}", "offset": 0, "opacity": 1 },
+            { "color": "{{barColorEnd}}", "offset": 1, "opacity": 1 }
+          ]
+        },
+        "borderColor": "transparent",
+        "borderWidth": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "bar-mar",
+      "type": "rectangle",
+      "state": {
+        "x": 330,
+        "y": 236,
+        "width": 70,
+        "height": 144,
+        "cornerRadius": 4,
+        "fillType": "linear-gradient",
+        "fillGradient": {
+          "opacity": 1,
+          "spreadMethod": "pad",
+          "x1": 0,
+          "y1": 0,
+          "x2": 0,
+          "y2": 1,
+          "stops": [
+            { "color": "{{barColorStart}}", "offset": 0, "opacity": 1 },
+            { "color": "{{barColorEnd}}", "offset": 1, "opacity": 1 }
+          ]
+        },
+        "borderColor": "transparent",
+        "borderWidth": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "bar-apr",
+      "type": "rectangle",
+      "state": {
+        "x": 440,
+        "y": 182,
+        "width": 70,
+        "height": 198,
+        "cornerRadius": 4,
+        "fillType": "linear-gradient",
+        "fillGradient": {
+          "opacity": 1,
+          "spreadMethod": "pad",
+          "x1": 0,
+          "y1": 0,
+          "x2": 0,
+          "y2": 1,
+          "stops": [
+            { "color": "{{barColorStart}}", "offset": 0, "opacity": 1 },
+            { "color": "{{barColorEnd}}", "offset": 1, "opacity": 1 }
+          ]
+        },
+        "borderColor": "transparent",
+        "borderWidth": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "bar-may",
+      "type": "rectangle",
+      "state": {
+        "x": 550,
+        "y": 134,
+        "width": 70,
+        "height": 246,
+        "cornerRadius": 4,
+        "fillType": "linear-gradient",
+        "fillGradient": {
+          "opacity": 1,
+          "spreadMethod": "pad",
+          "x1": 0,
+          "y1": 0,
+          "x2": 0,
+          "y2": 1,
+          "stops": [
+            { "color": "{{barColorStart}}", "offset": 0, "opacity": 1 },
+            { "color": "{{barColorEnd}}", "offset": 1, "opacity": 1 }
+          ]
+        },
+        "borderColor": "transparent",
+        "borderWidth": 0,
+        "opacity": 1
+      }
+    },
+
+    {
+      "id": "value-jan",
+      "type": "text",
+      "state": {
+        "x": 145,
+        "y": 306,
+        "text": "22",
+        "textAnchor": "middle",
+        "fillColor": "#2d3748",
+        "fontFamily": "Arial",
+        "fontSize": 13,
+        "fontWeight": "700",
+        "opacity": 1
+      }
+    },
+    {
+      "id": "value-feb",
+      "type": "text",
+      "state": {
+        "x": 255,
+        "y": 270,
+        "text": "34",
+        "textAnchor": "middle",
+        "fillColor": "#2d3748",
+        "fontFamily": "Arial",
+        "fontSize": 13,
+        "fontWeight": "700",
+        "opacity": 1
+      }
+    },
+    {
+      "id": "value-mar",
+      "type": "text",
+      "state": {
+        "x": 365,
+        "y": 228,
+        "text": "48",
+        "textAnchor": "middle",
+        "fillColor": "#2d3748",
+        "fontFamily": "Arial",
+        "fontSize": 13,
+        "fontWeight": "700",
+        "opacity": 1
+      }
+    },
+    {
+      "id": "value-apr",
+      "type": "text",
+      "state": {
+        "x": 475,
+        "y": 174,
+        "text": "66",
+        "textAnchor": "middle",
+        "fillColor": "#2d3748",
+        "fontFamily": "Arial",
+        "fontSize": 13,
+        "fontWeight": "700",
+        "opacity": 1
+      }
+    },
+    {
+      "id": "value-may",
+      "type": "text",
+      "state": {
+        "x": 585,
+        "y": 126,
+        "text": "82",
+        "textAnchor": "middle",
+        "fillColor": "#2d3748",
+        "fontFamily": "Arial",
+        "fontSize": 13,
+        "fontWeight": "700",
+        "opacity": 1
+      }
+    },
+
+    {
+      "id": "x-label-jan",
+      "type": "text",
+      "state": {
+        "x": 145,
+        "y": 406,
+        "text": "Jan",
+        "textAnchor": "middle",
+        "fillColor": "#4a5568",
+        "fontFamily": "Arial",
+        "fontSize": 12,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "x-label-feb",
+      "type": "text",
+      "state": {
+        "x": 255,
+        "y": 406,
+        "text": "Feb",
+        "textAnchor": "middle",
+        "fillColor": "#4a5568",
+        "fontFamily": "Arial",
+        "fontSize": 12,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "x-label-mar",
+      "type": "text",
+      "state": {
+        "x": 365,
+        "y": 406,
+        "text": "Mar",
+        "textAnchor": "middle",
+        "fillColor": "#4a5568",
+        "fontFamily": "Arial",
+        "fontSize": 12,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "x-label-apr",
+      "type": "text",
+      "state": {
+        "x": 475,
+        "y": 406,
+        "text": "Apr",
+        "textAnchor": "middle",
+        "fillColor": "#4a5568",
+        "fontFamily": "Arial",
+        "fontSize": 12,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "x-label-may",
+      "type": "text",
+      "state": {
+        "x": 585,
+        "y": 406,
+        "text": "May",
+        "textAnchor": "middle",
+        "fillColor": "#4a5568",
+        "fontFamily": "Arial",
+        "fontSize": 12,
+        "opacity": 1
+      }
+    },
+
+    {
+      "id": "footer",
+      "type": "text",
+      "state": {
+        "x": 360,
+        "y": 442,
+        "text": "Committed to git  •  rendered by svgsketch/render-action in CI",
+        "textAnchor": "middle",
+        "fillColor": "#a0aec0",
+        "fontFamily": "Arial",
+        "fontSize": 11,
+        "fontStyle": "italic",
+        "opacity": 1
+      }
+    }
+  ]
+}

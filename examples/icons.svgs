@@ -1,0 +1,430 @@
+{
+  "schemaVersion": 1,
+  "documentMetadata": {
+    "title": "Icon Set",
+    "description": "A grid of 10 icons built from first-class primitives (circle, rectangle, line, star, triangle, arrow, gear, ring, cross). Override the accent template variable to retheme the whole set.",
+    "language": "en"
+  },
+  "templateVariables": [
+    {
+      "name": "accent",
+      "type": "color",
+      "defaultValue": "#3498db",
+      "label": "Icon accent color",
+      "description": "Primary stroke color for all icons."
+    }
+  ],
+  "viewboxes": [
+    {
+      "id": "vb-1",
+      "x": 0,
+      "y": 0,
+      "width": 640,
+      "height": 320
+    }
+  ],
+  "shapes": [
+    {
+      "id": "bg",
+      "type": "rectangle",
+      "state": {
+        "x": 0,
+        "y": 0,
+        "width": 640,
+        "height": 320,
+        "fillColor": "#ffffff",
+        "borderColor": "#ffffff",
+        "borderWidth": 0,
+        "opacity": 1
+      }
+    },
+
+    {
+      "id": "icon-mail-body",
+      "type": "rectangle",
+      "state": {
+        "x": 40,
+        "y": 50,
+        "width": 60,
+        "height": 44,
+        "cornerRadius": 4,
+        "fillColor": "transparent",
+        "fillType": "none",
+        "borderColor": "{{accent}}",
+        "borderWidth": 3,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "icon-mail-flap-l",
+      "type": "line",
+      "state": {
+        "x1": 40,
+        "y1": 54,
+        "x2": 70,
+        "y2": 76,
+        "borderColor": "{{accent}}",
+        "borderWidth": 3,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "icon-mail-flap-r",
+      "type": "line",
+      "state": {
+        "x1": 100,
+        "y1": 54,
+        "x2": 70,
+        "y2": 76,
+        "borderColor": "{{accent}}",
+        "borderWidth": 3,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "icon-mail-label",
+      "type": "text",
+      "state": {
+        "x": 70,
+        "y": 120,
+        "text": "mail",
+        "textAnchor": "middle",
+        "fillColor": "#2c3e50",
+        "fontFamily": "Arial",
+        "fontSize": 13,
+        "opacity": 1
+      }
+    },
+
+    {
+      "id": "icon-user-head",
+      "type": "circle",
+      "state": {
+        "x": 200,
+        "y": 60,
+        "radius": 12,
+        "fillColor": "transparent",
+        "fillType": "none",
+        "borderColor": "{{accent}}",
+        "borderWidth": 3,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "icon-user-body",
+      "type": "rectangle",
+      "state": {
+        "x": 178,
+        "y": 78,
+        "width": 44,
+        "height": 20,
+        "cornerRadius": 22,
+        "fillColor": "transparent",
+        "fillType": "none",
+        "borderColor": "{{accent}}",
+        "borderWidth": 3,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "icon-user-label",
+      "type": "text",
+      "state": {
+        "x": 200,
+        "y": 120,
+        "text": "user",
+        "textAnchor": "middle",
+        "fillColor": "#2c3e50",
+        "fontFamily": "Arial",
+        "fontSize": 13,
+        "opacity": 1
+      }
+    },
+
+    {
+      "id": "icon-settings",
+      "type": "gear",
+      "state": {
+        "cx": 330,
+        "cy": 72,
+        "radius": 24,
+        "teeth": 8,
+        "toothDepthPercent": 22,
+        "holeRadiusPercent": 35,
+        "cornerRadius": 2,
+        "fillColor": "transparent",
+        "fillType": "none",
+        "borderColor": "{{accent}}",
+        "borderWidth": 3,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "icon-settings-label",
+      "type": "text",
+      "state": {
+        "x": 330,
+        "y": 120,
+        "text": "settings",
+        "textAnchor": "middle",
+        "fillColor": "#2c3e50",
+        "fontFamily": "Arial",
+        "fontSize": 13,
+        "opacity": 1
+      }
+    },
+
+    {
+      "id": "icon-search-ring",
+      "type": "circle",
+      "state": {
+        "x": 450,
+        "y": 66,
+        "radius": 14,
+        "fillColor": "transparent",
+        "fillType": "none",
+        "borderColor": "{{accent}}",
+        "borderWidth": 3,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "icon-search-stem",
+      "type": "line",
+      "state": {
+        "x1": 461,
+        "y1": 77,
+        "x2": 476,
+        "y2": 92,
+        "borderColor": "{{accent}}",
+        "borderWidth": 3,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "icon-search-label",
+      "type": "text",
+      "state": {
+        "x": 450,
+        "y": 120,
+        "text": "search",
+        "textAnchor": "middle",
+        "fillColor": "#2c3e50",
+        "fontFamily": "Arial",
+        "fontSize": 13,
+        "opacity": 1
+      }
+    },
+
+    {
+      "id": "icon-check-left",
+      "type": "line",
+      "state": {
+        "x1": 552,
+        "y1": 74,
+        "x2": 566,
+        "y2": 88,
+        "borderColor": "{{accent}}",
+        "borderWidth": 4,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "icon-check-right",
+      "type": "line",
+      "state": {
+        "x1": 566,
+        "y1": 88,
+        "x2": 590,
+        "y2": 58,
+        "borderColor": "{{accent}}",
+        "borderWidth": 4,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "icon-check-label",
+      "type": "text",
+      "state": {
+        "x": 570,
+        "y": 120,
+        "text": "done",
+        "textAnchor": "middle",
+        "fillColor": "#2c3e50",
+        "fontFamily": "Arial",
+        "fontSize": 13,
+        "opacity": 1
+      }
+    },
+
+    {
+      "id": "icon-ring",
+      "type": "ring",
+      "state": {
+        "cx": 70,
+        "cy": 210,
+        "radius": 22,
+        "innerRadiusPercent": 55,
+        "fillColor": "{{accent}}",
+        "borderColor": "{{accent}}",
+        "borderWidth": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "icon-ring-label",
+      "type": "text",
+      "state": {
+        "x": 70,
+        "y": 258,
+        "text": "progress",
+        "textAnchor": "middle",
+        "fillColor": "#2c3e50",
+        "fontFamily": "Arial",
+        "fontSize": 13,
+        "opacity": 1
+      }
+    },
+
+    {
+      "id": "icon-star",
+      "type": "star",
+      "state": {
+        "cx": 200,
+        "cy": 210,
+        "radius": 26,
+        "arms": 5,
+        "innerRadiusPercent": 45,
+        "cornerRadius": 0,
+        "shiftAngle": 0,
+        "fillColor": "{{accent}}",
+        "borderColor": "{{accent}}",
+        "borderWidth": 2,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "icon-star-label",
+      "type": "text",
+      "state": {
+        "x": 200,
+        "y": 258,
+        "text": "star",
+        "textAnchor": "middle",
+        "fillColor": "#2c3e50",
+        "fontFamily": "Arial",
+        "fontSize": 13,
+        "opacity": 1
+      }
+    },
+
+    {
+      "id": "icon-plus",
+      "type": "cross",
+      "state": {
+        "cx": 330,
+        "cy": 212,
+        "radius": 22,
+        "armWidthPercent": 30,
+        "cornerRadius": 3,
+        "shiftAngle": 0,
+        "fillColor": "{{accent}}",
+        "borderColor": "{{accent}}",
+        "borderWidth": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "icon-plus-label",
+      "type": "text",
+      "state": {
+        "x": 330,
+        "y": 258,
+        "text": "new",
+        "textAnchor": "middle",
+        "fillColor": "#2c3e50",
+        "fontFamily": "Arial",
+        "fontSize": 13,
+        "opacity": 1
+      }
+    },
+
+    {
+      "id": "icon-play",
+      "type": "triangle",
+      "state": {
+        "cx": 450,
+        "cy": 212,
+        "radius": 22,
+        "cornerRadius": 2,
+        "shiftAngle": 0,
+        "fillColor": "{{accent}}",
+        "borderColor": "{{accent}}",
+        "borderWidth": 2,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "icon-play-label",
+      "type": "text",
+      "state": {
+        "x": 450,
+        "y": 258,
+        "text": "play",
+        "textAnchor": "middle",
+        "fillColor": "#2c3e50",
+        "fontFamily": "Arial",
+        "fontSize": 13,
+        "opacity": 1
+      }
+    },
+
+    {
+      "id": "icon-arrow",
+      "type": "arrow",
+      "state": {
+        "cx": 570,
+        "cy": 212,
+        "radius": 26,
+        "headWidthPercent": 80,
+        "headLengthPercent": 40,
+        "shaftWidthPercent": 30,
+        "shiftAngle": 0,
+        "fillColor": "{{accent}}",
+        "borderColor": "{{accent}}",
+        "borderWidth": 0,
+        "opacity": 1
+      }
+    },
+    {
+      "id": "icon-arrow-label",
+      "type": "text",
+      "state": {
+        "x": 570,
+        "y": 258,
+        "text": "send",
+        "textAnchor": "middle",
+        "fillColor": "#2c3e50",
+        "fontFamily": "Arial",
+        "fontSize": 13,
+        "opacity": 1
+      }
+    },
+
+    {
+      "id": "footer",
+      "type": "text",
+      "state": {
+        "x": 320,
+        "y": 302,
+        "text": "Override the accent template variable in CI to retheme the whole set.",
+        "textAnchor": "middle",
+        "fillColor": "#7f8c8d",
+        "fontFamily": "Arial",
+        "fontSize": 11,
+        "fontStyle": "italic",
+        "opacity": 1
+      }
+    }
+  ]
+}

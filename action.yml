@@ -1,0 +1,54 @@
+name: 'SVGSketch Render'
+description: 'Render SVGSketch .svgs documents to SVG in CI/CD. Supports globs, template variables, and batch rendering.'
+author: 'SVGSketch'
+branding:
+  icon: 'image'
+  color: 'blue'
+
+inputs:
+  input:
+    description: >-
+      File path or glob pattern for `.svgs` files to render.
+      Glob patterns follow @actions/glob syntax (e.g. `designs/**/*.svgs`).
+    required: false
+    default: '**/*.svgs'
+  output-dir:
+    description: >-
+      Directory to write rendered SVG files into. Source directory structure is
+      mirrored beneath this path. When omitted, rendered files are written
+      next to their source `.svgs` files.
+    required: false
+    default: ''
+  variables:
+    description: >-
+      Template variable overrides. Accepts either a JSON object
+      (`{"color":"#f00","size":"40"}`) or newline-separated `KEY=VALUE` pairs.
+      Variables not overridden fall back to the document's declared defaults.
+    required: false
+    default: ''
+  width:
+    description: 'Override canvas width (pixels). Optional.'
+    required: false
+    default: ''
+  height:
+    description: 'Override canvas height (pixels). Optional.'
+    required: false
+    default: ''
+  background:
+    description: 'Background color (e.g. `#ffffff`). Adds a background `<rect>` to rendered SVGs.'
+    required: false
+    default: ''
+  fail-on-warnings:
+    description: 'Treat validation warnings as failures. Default `false` (warnings only logged).'
+    required: false
+    default: 'false'
+
+outputs:
+  files:
+    description: 'JSON array of rendered output file paths (relative to the runner workspace).'
+  count:
+    description: 'Number of `.svgs` files rendered.'
+
+runs:
+  using: 'node24'
+  main: 'dist/index.js'
