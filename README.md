@@ -146,6 +146,31 @@ jobs:
           fail-on-warnings: 'true'
 ```
 
+### Post a visual preview as a PR comment
+
+```yaml
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write    # required to post/update the comment
+    steps:
+      - uses: actions/checkout@v4
+      - uses: svgsketch/render-action@v1
+        with:
+          input: designs/**/*.svgs
+          output-dir: rendered
+          comment-on-pr: 'true'
+```
+
+On every pull request, the action rasterizes each rendered SVG to PNG
+(via [`@resvg/resvg-wasm`](https://www.npmjs.com/package/@resvg/resvg-wasm)),
+embeds them as base64 data URIs, and posts a single comment containing
+the visual previews. Re-runs update the same comment in place — no
+spam. Works on pushes without failing; comments are only attempted when
+the triggering event is a pull request.
+
 ---
 
 ## Inputs
@@ -159,6 +184,10 @@ jobs:
 | `height`           | no       | *(document)*  | Override canvas height (positive number, pixels).                            |
 | `background`       | no       | *(none)*      | Background color (e.g. `#ffffff`). Adds a background `<rect>`.               |
 | `fail-on-warnings` | no       | `false`       | Treat validation warnings as failures.                                       |
+| `comment-on-pr`    | no       | `false`       | Post/update a visual preview comment on the triggering pull request.        |
+| `comment-format`   | no       | `png`         | `png` (inline base64 PNGs) or `artifact-link` (skip embedding, note only).   |
+| `comment-max-kb`   | no       | `400`         | Per-image size cap; PNGs above this fall back to an artifact-link note.      |
+| `github-token`     | no       | *(env)*       | Token for posting the comment. Defaults to `GITHUB_TOKEN` env var.           |
 
 ## Outputs
 

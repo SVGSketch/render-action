@@ -42,6 +42,36 @@ inputs:
     description: 'Treat validation warnings as failures. Default `false` (warnings only logged).'
     required: false
     default: 'false'
+  comment-on-pr:
+    description: >-
+      Post the rendered outputs as a visual preview comment on the pull
+      request. Requires `permissions: pull-requests: write` in the
+      consumer workflow. Default `false`.
+    required: false
+    default: 'false'
+  comment-format:
+    description: >-
+      How renders are embedded in the PR comment. `png` rasterizes each
+      SVG to a base64 PNG embedded inline (works for small/medium images).
+      `artifact-link` skips rasterization and posts a link to the uploaded
+      artifact instead. Default `png`.
+    required: false
+    default: 'png'
+  comment-max-kb:
+    description: >-
+      Maximum size (KB) of a single rendered PNG before the action falls
+      back to artifact-link mode for that file, to avoid bloating the PR
+      comment beyond GitHub's rendering limits. Default `400`.
+    required: false
+    default: '400'
+  github-token:
+    description: >-
+      Token used to post/update the PR comment. When omitted, the action
+      falls back to the `GITHUB_TOKEN` environment variable (which is
+      automatically set by the runner). Override only if you need a
+      different identity (e.g. a bot account) to author the comment.
+    required: false
+    default: ''
 
 outputs:
   files:

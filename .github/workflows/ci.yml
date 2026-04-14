@@ -9,11 +9,15 @@ on:
 
 permissions:
   contents: read
+  # Required so the action can post/update the visual preview comment
+  # on PRs. Read-only tokens silently skip the comment step.
+  pull-requests: write
 
 jobs:
   # Dogfood the action: render every .svgs file in examples/ using the
-  # action's own source, then upload the rendered SVGs as an artifact so
-  # reviewers can inspect each run's output.
+  # action's own source, upload the rendered SVGs as an artifact, and on
+  # pull requests post a visual preview comment so reviewers can diff
+  # the output without downloading anything.
   render-examples:
     name: Render examples
     runs-on: ubuntu-latest
@@ -22,12 +26,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Render default variants
+      - name: Render default variants (and post PR preview)
         id: default
         uses: ./
         with:
           input: examples/**/*.svgs
           output-dir: rendered/default
+          comment-on-pr: 'true'
 
       - name: Render retheme variants (template variable override)
         id: themed
