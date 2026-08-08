@@ -14,7 +14,7 @@ for (const filename of expectedNames) {
     readFileSync(resolve("examples", sourceFilename), "utf8"),
   );
   assert(
-    source.schemaVersion === 7,
+    source.schemaVersion === 8,
     `${sourceFilename} is not at the current schema version`,
   );
   assert(
