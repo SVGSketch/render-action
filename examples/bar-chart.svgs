@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 6,
+  "schemaVersion": 7,
   "documentMetadata": {
     "title": "Monthly Active Users",
     "description": "A themed bar chart showing H1 growth. Override {{title}}, {{subtitle}}, {{barColorStart}} and {{barColorEnd}} at render time to produce a themed variant without touching the source.",
