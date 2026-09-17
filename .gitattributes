@@ -1,0 +1,14 @@
+# `dist/` is build output that is compared BYTE FOR BYTE.
+#
+# The monorepo's `check:published-dist` gate fingerprints these files and
+# requires them to equal a fresh `ncc` build of packages/github-action. Git's
+# end-of-line conversion would rewrite index.js and index.js.map in a working
+# copy on a platform whose native ending is CRLF, and a re-commit from that
+# copy would ship a bundle whose bytes no longer match any build. Committing
+# the current bundle already produced the warning:
+#
+#   in the working copy of 'dist/index.js', LF will be replaced by CRLF
+#
+# `-text` turns the conversion off in both directions, so the bytes here are
+# the bytes that were built.
+dist/** -text
